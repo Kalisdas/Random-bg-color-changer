@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM BACKGROUND color change</title>
+    <style>
+      body{
+      margin: 0px;
+      padding: 0px;
+      
+      }
+       #heading{
+         width: 100vw;
+         height: 10vh;
+         /* margin-left: 0px; */
+         font-size: 30px;
+         display: flex;
+         background-color: whitesmoke;
+         align-items: center;
+       }
+       #color{
+        color:red;
+        margin-left: 1050px;
+        font-size: 30px;
+       }
+       #btn{
+        margin-top: 20%;
+        margin-left: 45%;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        border-style: none;
+        color: coral;
+        font-weight: bold;
+       }
+       #wrap{
+       height: 90vh;
+       width: 100vw;
+       background: white;
+       }
+
+        
+    </style>
+</head>
+<body>
+    <div id="heading"> color flipper 
+      <span id="color">#ffffff</span>
+    </div>
+
+    <div id="wrap">
+         <div id="container">  
+                <button id="btn">Change color</button>
+    </div>
+</div>
+ <script>
+      let button = document.getElementById('btn')
+      let  colortext = document.getElementById('color')
+      let warp = document.getElementById('wrap')
+
+    const  hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+    button.addEventListener('click',function(){
+       let hexcolor = '#'       
+           for(i=1;i<=6;i++){
+            hexcolor +=  random()
+           }
+           warp.style.backgroundColor = hexcolor
+            colortext.innerHTML = hexcolor
+    })
+    function random(){
+                  let ranvalue = Math.floor(Math.random()*16)
+                  return    hex[ranvalue]
+    }
+ </script>
+</body>
+</html>
